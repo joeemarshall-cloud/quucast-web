@@ -47,82 +47,63 @@ gh repo create quucast-web --public --source=. --remote=origin --push
 4. Deploy. You'll get a `*.pages.dev` URL first.
 5. In the Pages project → **Custom domains**, add `quucast.com` (and/or `www.quucast.com`). Since `quucast.com` is already in your Cloudflare account, this is a one-click DNS setup — no manual CNAME needed.
 
-## 3. Install `cloudflared` on the dedicated PC
+## 3. Create the tunnel in the Cloudflare dashboard
+
+Tunnel routing is managed from the Zero Trust dashboard rather than local config files — it's simpler and there's nothing to hand-edit on the PC.
+
+1. Go to **https://one.dash.cloudflare.com/** → pick your account → left sidebar **Networks → Tunnels**.
+2. Click **Create a tunnel** → choose **Cloudflared** → name it `quucast-apps` → **Save tunnel**.
+3. The next screen gives you an install/connector command for each OS. Copy the **Windows** one — it looks like:
+
+   ```powershell
+   cloudflared service install <token>
+   ```
+
+## 4. Run the connector on the dedicated PC
 
 This is the PC actually running the HD Radio Server and Station Status apps (`192.168.1.37`).
+
+Install `cloudflared` if it isn't already there:
 
 ```powershell
 winget install --id Cloudflare.cloudflared
 ```
 
-Verify:
+Then run the install command copied from step 3, in an **elevated** PowerShell:
 
 ```powershell
-cloudflared --version
+cloudflared service install <token>
 ```
 
-## 4. Authenticate and create the tunnel
-
-```powershell
-cloudflared tunnel login
-```
-
-This opens a browser — sign in and pick `quucast.com` as the domain to authorize.
-
-```powershell
-cloudflared tunnel create quucast-apps
-```
-
-This prints a **tunnel ID** and writes a credentials JSON file to `%USERPROFILE%\.cloudflared\`. Note the tunnel ID for the config below.
-
-## 5. Route the hostnames
-
-```powershell
-cloudflared tunnel route dns quucast-apps hdradio.quucast.com
-cloudflared tunnel route dns quucast-apps status.quucast.com
-```
-
-This creates the DNS records in Cloudflare automatically (they'll show as proxied CNAMEs pointing at the tunnel).
-
-## 6. Configure ingress
-
-Create `%USERPROFILE%\.cloudflared\config.yml`:
-
-```yaml
-tunnel: <TUNNEL_ID>
-credentials-file: C:\Users\<you>\.cloudflared\<TUNNEL_ID>.json
-
-ingress:
-  - hostname: hdradio.quucast.com
-    service: http://localhost:3002
-  - hostname: status.quucast.com
-    service: http://localhost:4173
-  - service: http_status:404
-```
-
-Use `localhost` here (not `192.168.1.37`) since `cloudflared` runs on the same machine as the apps.
-
-## 7. Run the tunnel
-
-Test it first in the foreground:
-
-```powershell
-cloudflared tunnel run quucast-apps
-```
-
-Visit `https://hdradio.quucast.com` and `https://status.quucast.com` to confirm both resolve. Then install it as a Windows service so it survives reboots:
-
-```powershell
-cloudflared service install
-```
-
-This uses the same `config.yml`. Check it's running with:
+This installs `cloudflared` as a Windows service and links it to the `quucast-apps` tunnel — no `login`, `create`, or local `config.yml` needed. Back in the dashboard, the tunnel should flip to **Connected**. Check the service is running with:
 
 ```powershell
 Get-Service Cloudflared
 ```
 
-## 8. Done
+## 5. Add the public hostnames
+
+Still in the tunnel's page in the dashboard, open the **Public Hostname** tab.
+
+**Add a public hostname:**
+- Subdomain: `hdradio`
+- Domain: `quucast.com`
+- Service Type: `HTTP`
+- URL: `localhost:3002`
+
+**Add a public hostname** again:
+- Subdomain: `status`
+- Domain: `quucast.com`
+- Service Type: `HTTP`
+- URL: `localhost:4173`
+
+Use `localhost`, not `192.168.1.37` — the connector runs on the same PC as the apps. Saving each hostname creates the DNS record and the routing rule together; nothing else to configure.
+
+## 6. Verify
+
+Visit `https://hdradio.quucast.com` and `https://status.quucast.com` directly to confirm both resolve and load before relying on the launcher page.
+
+## 7. Done
 
 Once the tunnel is live, `https://quucast.com` (Cloudflare Pages) will show both tiles, and clicking them will route through the tunnel to the apps on the dedicated PC — no port forwarding, no exposed local IP.
 
@@ -139,4 +120,4 @@ Add an entry to `config.json`:
 }
 ```
 
-Built-in icon keys: `radio`, `status`. Anything else falls back to a generic link icon (see `script.js`). Then add a matching `ingress` entry in `config.yml`, run `cloudflared tunnel route dns quucast-apps newapp.quucast.com`, and restart the `Cloudflared` service.
+Built-in icon keys: `radio`, `status`. Anything else falls back to a generic link icon (see `script.js`). Then add a matching **public hostname** in the tunnel's dashboard page (subdomain `newapp`, domain `quucast.com`, pointing at the app's `localhost:<port>`).
