@@ -1,0 +1,364 @@
+:root {
+  --bg: #0a1628;
+  --surface: #111827;
+  --surface-alt: #17202f;
+  --border: #1e2a3d;
+  --border-light: #263347;
+  --accent: #46ace1;
+  --accent-hover: #60bfed;
+  --accent-glow: rgba(70, 172, 225, 0.15);
+  --text-primary: #ffffff;
+  --text-secondary: #d4d8e0;
+  --text-muted: #5a6070;
+  --radius: 10px;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f9f9f7;
+    --surface: #fcfcfb;
+    --surface-alt: #f2f2ef;
+    --border: #e1e0d9;
+    --border-light: #d4d3cb;
+    --accent: #2a78d6;
+    --accent-hover: #1f63b3;
+    --accent-glow: rgba(42, 120, 214, 0.12);
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.page-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 24px 56px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo-light {
+  display: none;
+}
+
+.brand-logo-dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  .brand-logo-dark {
+    display: none;
+  }
+  .brand-logo-light {
+    display: block;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 32px 0 0;
+}
+
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 190px;
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.app-tile:hover,
+.app-tile:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: var(--surface-alt);
+}
+
+.tile-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+.tile-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.app-tile h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.app-tile p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.tile-label {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.notes-card {
+  padding: 22px 26px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  margin-top: 18px;
+}
+
+.notes-card h3 {
+  margin: 0 0 10px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.notes-card p {
+  margin: 0 0 8px;
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.hint {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+code {
+  background: var(--surface-alt);
+  padding: 0.18rem 0.35rem;
+  border-radius: 0.35rem;
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #04121e;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--accent-hover);
+}
+
+.button-secondary {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  border-color: var(--accent);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.settings-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 18px;
+  margin: 32px 0 0;
+}
+
+.settings-card {
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.settings-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.settings-list {
+  display: grid;
+  gap: 14px;
+}
+
+.settings-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.settings-preview {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.settings-preview h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.settings-preview p {
+  margin: 0 8px 0 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.settings-url {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.app-status {
+  align-self: start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-size: 0.85rem;
+  min-height: fit-content;
+}
+
+.empty-state {
+  padding: 30px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px dashed var(--border-light);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+pre {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 960px) {
+  .settings-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 24px 16px 32px;
+  }
+  .hero {
+    padding: 20px 18px;
+  }
+  .hero-actions {
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+  }
+}

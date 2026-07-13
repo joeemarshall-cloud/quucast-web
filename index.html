@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuuCast Launcher</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="brand">
+        <img class="brand-logo brand-logo-light" src="assets/quu-logo-light.svg" alt="Quu" />
+        <img class="brand-logo brand-logo-dark" src="assets/quu-logo-dark.svg" alt="Quu" />
+        <div>
+          <p class="eyebrow">QuuCast</p>
+          <h1>App Launcher</h1>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-secondary" href="settings.html">Settings</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="tile-grid" id="dashboard-tiles">
+        <div class="empty-state">Loading apps…</div>
+      </section>
+
+      <section class="notes-card">
+        <h3>How it works</h3>
+        <p>App tiles are generated from <code>config.json</code>. Add or update apps there, then refresh the page.</p>
+        <p class="hint">Open <a href="settings.html">Settings</a> to see the current configured apps.</p>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
