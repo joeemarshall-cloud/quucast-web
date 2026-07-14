@@ -3,25 +3,25 @@
     {
       "name": "Quu HD Radio Network",
       "url": "https://hdradionetwork.quucast.com",
-      "description": "Live tuner dashboard, signal and RDS data, and remote tuning.",
+      "description": "Live HD Tuner Network. Signal, AE, PSD, RDS data, and remote tuning.",
       "image": "assets/tile-radio.svg"
     },
     {
       "name": "Quu Station Status",
       "url": "https://status.quucast.com",
-      "description": "Station health, stream status, and system uptime across the network.",
+      "description": "Quu Software, automation, and version status.",
       "image": "assets/tile-status.svg"
     },
     {
-      "name": "Quu Podcast Editor",
+      "name": "Quu Podcast Metadata Editor",
       "url": "https://podedit.quucast.com",
-      "description": "Record, edit, and publish podcast episodes for the QuuCast network.",
+      "description": "Add rich chapter metadata to completed podcast audio including Chapter Titles and artwork. Include titles and pictures of speakers, topics, or even Adsync and Content Partnership campaigns.",
       "image": "assets/tile-podcast-editor.svg"
     },
     {
       "name": "Quu Tuner Demo",
       "url": "https://tunerdemo.quucast.com",
-      "description": "Single-instance tuner demo running on the dedicated PC.",
+      "description": "Single tuner instance (Windows or Linux/Pi). This tuner is set to network mode and shared with the Quu HD Radio Network.",
       "image": "assets/tile-tuner-demo.svg"
     }
   ]
