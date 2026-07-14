@@ -58,40 +58,13 @@ function renderDashboard(apps) {
   if (!grid) return;
   grid.innerHTML = "";
   if (!apps.length) {
-    grid.innerHTML = '<div class="empty-state">No apps configured. Edit config.json or open settings.html.</div>';
+    grid.innerHTML = '<div class="empty-state">No apps configured. Edit config.json to add apps.</div>';
     return;
   }
   apps.forEach((app) => grid.appendChild(createTile(app)));
 }
 
-function renderSettings(apps) {
-  const list = document.getElementById("settings-app-list");
-  if (!list) return;
-  list.innerHTML = "";
-  if (!apps.length) {
-    list.innerHTML = '<div class="empty-state">No apps configured. Add items to config.json.</div>';
-    return;
-  }
-  apps.forEach((app) => {
-    const item = document.createElement("div");
-    item.className = "settings-item";
-    item.innerHTML = `
-      <div class="settings-preview">
-        <span class="tile-icon">${icons[app.icon] || icons.link}</span>
-        <div>
-          <h3>${app.name}</h3>
-          <p>${app.description || "No description provided."}</p>
-          <p class="settings-url">${app.url || "No URL configured"}</p>
-        </div>
-      </div>
-      ${app.status ? `<span class="app-status">${app.status}</span>` : ""}
-    `;
-    list.appendChild(item);
-  });
-}
-
 document.addEventListener("DOMContentLoaded", async () => {
   const apps = await loadConfig();
   renderDashboard(apps);
-  renderSettings(apps);
 });

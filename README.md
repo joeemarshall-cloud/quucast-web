@@ -5,7 +5,6 @@ A static launch page for Quu-branded apps, themed to match the Quu HD Radio Netw
 ## Files
 
 - `index.html` — landing page with app tiles
-- `settings.html` — shows the configured apps and how to edit them
 - `config.json` — app definitions used by the launcher
 - `styles.css` — Quu theme (dark navy by default, auto light mode)
 - `script.js` — loads tiles from `config.json`
