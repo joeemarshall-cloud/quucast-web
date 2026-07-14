@@ -2,7 +2,7 @@ const configUrl = "config.json";
 const fallbackApps = [
   {
     name: "Quu HD Radio Network",
-    url: "https://hdradio.quucast.com",
+    url: "https://hdradionetwork.quucast.com",
     description: "Live tuner dashboard, signal and RDS data, and remote tuning.",
     icon: "radio"
   },

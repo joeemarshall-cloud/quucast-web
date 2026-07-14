@@ -16,7 +16,7 @@ A static launch page for Quu-branded apps, themed to match the Quu HD Radio Netw
 
 | Tile | Local address | Public address (via tunnel) |
 |---|---|---|
-| Quu HD Radio Network | `http://192.168.1.37:3002` | `https://hdradio.quucast.com` |
+| Quu HD Radio Network | `http://192.168.1.37:3002` | `https://hdradionetwork.quucast.com` |
 | Quu Station Status | `http://192.168.1.37:4173` | `https://status.quucast.com` |
 
 `config.json` already points at the public `quucast.com` addresses. Those won't resolve until the Cloudflare Tunnel below is set up and DNS records exist.
@@ -86,7 +86,7 @@ Get-Service Cloudflared
 Still in the tunnel's page in the dashboard, open the **Public Hostname** tab.
 
 **Add a public hostname:**
-- Subdomain: `hdradio`
+- Subdomain: `hdradionetwork`
 - Domain: `quucast.com`
 - Service Type: `HTTP`
 - URL: `localhost:3002`
@@ -101,7 +101,7 @@ Use `localhost`, not `192.168.1.37` — the connector runs on the same PC as the
 
 ## 6. Verify
 
-Visit `https://hdradio.quucast.com` and `https://status.quucast.com` directly to confirm both resolve and load before relying on the launcher page.
+Visit `https://hdradionetwork.quucast.com` and `https://status.quucast.com` directly to confirm both resolve and load before relying on the launcher page.
 
 ## 7. Done
 
