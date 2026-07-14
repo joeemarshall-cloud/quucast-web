@@ -15,7 +15,7 @@
     {
       "name": "Quu Podcast Metadata Editor",
       "url": "https://podedit.quucast.com",
-      "description": "Add rich chapter metadata to completed podcast audio including Chapter Titles and artwork. Include titles and pictures of speakers, topics, or even Adsync and Content Partnership campaigns.",
+      "description": "Add rich chapter metadata to podcast mp3/m4a files. Images, chapter titles, and revenue generating campaigns from Quu.",
       "image": "assets/tile-podcast-editor.svg"
     },
     {
