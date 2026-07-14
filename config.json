@@ -17,6 +17,12 @@
       "url": "https://podedit.quucast.com",
       "description": "Record, edit, and publish podcast episodes for the QuuCast network.",
       "image": "assets/tile-podcast-editor.svg"
+    },
+    {
+      "name": "Quu Tuner Demo",
+      "url": "https://tunerdemo.quucast.com",
+      "description": "Single-instance tuner demo running on the dedicated PC.",
+      "image": "assets/tile-tuner-demo.svg"
     }
   ]
 }

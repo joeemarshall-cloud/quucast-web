@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Quu Tuner Demo preview">
+  <defs>
+    <linearGradient id="tunerBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1c0f"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <radialGradient id="tunerGlow" cx="78%" cy="26%" r="60%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#tunerBg)"/>
+  <rect width="400" height="250" fill="url(#tunerGlow)"/>
+
+  <!-- window chrome -->
+  <rect x="0" y="0" width="400" height="28" fill="#231708"/>
+  <circle cx="18" cy="14" r="4" fill="#f0785a"/>
+  <circle cx="32" cy="14" r="4" fill="#f0c352"/>
+  <circle cx="46" cy="14" r="4" fill="#5ec98a"/>
+  <rect x="70" y="9" width="180" height="10" rx="5" fill="#2e2210"/>
+
+  <!-- single tuning dial -->
+  <circle cx="110" cy="140" r="58" fill="#1c1408" stroke="#3a2b12" stroke-width="2"/>
+  <circle cx="110" cy="140" r="46" fill="none" stroke="#4a3618" stroke-width="1"/>
+  <g stroke="#6b4f21" stroke-width="2">
+    <line x1="110" y1="86" x2="110" y2="96"/>
+    <line x1="152" y1="102" x2="145" y2="109"/>
+    <line x1="68" y1="102" x2="75" y2="109"/>
+    <line x1="164" y1="140" x2="154" y2="140"/>
+    <line x1="56" y1="140" x2="66" y2="140"/>
+  </g>
+  <line x1="110" y1="140" x2="138" y2="112" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="110" cy="140" r="6" fill="#fbbf24"/>
+
+  <!-- frequency readout -->
+  <rect x="196" y="112" width="164" height="42" rx="6" fill="#1c1408" stroke="#3a2b12" stroke-width="1"/>
+  <text x="278" y="141" font-family="monospace" font-size="26" fill="#fbbf24" text-anchor="middle">101.5</text>
+
+  <!-- single signal meter -->
+  <g fill="#fbbf24">
+    <rect x="196" y="176" width="10" height="20" rx="2" opacity="0.9"/>
+    <rect x="212" y="166" width="10" height="30" rx="2" opacity="0.9"/>
+    <rect x="228" y="156" width="10" height="40" rx="2" opacity="0.9"/>
+    <rect x="244" y="170" width="10" height="26" rx="2" opacity="0.5"/>
+    <rect x="260" y="182" width="10" height="14" rx="2" opacity="0.3"/>
+  </g>
+
+  <!-- label row -->
+  <rect x="196" y="204" width="164" height="8" rx="4" fill="#2e2210"/>
+</svg>
