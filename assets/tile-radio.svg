@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Quu HD Radio Network preview">
+  <defs>
+    <linearGradient id="radioBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2033"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <radialGradient id="radioGlow" cx="78%" cy="28%" r="60%">
+      <stop offset="0%" stop-color="#46ace1" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#46ace1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#radioBg)"/>
+  <rect width="400" height="250" fill="url(#radioGlow)"/>
+
+  <!-- window chrome -->
+  <rect x="0" y="0" width="400" height="28" fill="#0d1c2e"/>
+  <circle cx="18" cy="14" r="4" fill="#f0785a"/>
+  <circle cx="32" cy="14" r="4" fill="#f0c352"/>
+  <circle cx="46" cy="14" r="4" fill="#5ec98a"/>
+  <rect x="70" y="9" width="180" height="10" rx="5" fill="#17263a"/>
+
+  <!-- concentric broadcast waves -->
+  <g stroke="#46ace1" fill="none" stroke-width="2">
+    <circle cx="290" cy="150" r="24" opacity="0.9"/>
+    <circle cx="290" cy="150" r="46" opacity="0.6"/>
+    <circle cx="290" cy="150" r="68" opacity="0.35"/>
+    <circle cx="290" cy="150" r="90" opacity="0.18"/>
+  </g>
+  <circle cx="290" cy="150" r="7" fill="#46ace1"/>
+
+  <!-- signal bars -->
+  <g fill="#60bfed">
+    <rect x="40" y="150" width="10" height="40" rx="2" opacity="0.9"/>
+    <rect x="56" y="130" width="10" height="60" rx="2" opacity="0.9"/>
+    <rect x="72" y="110" width="10" height="80" rx="2" opacity="0.9"/>
+    <rect x="88" y="140" width="10" height="50" rx="2" opacity="0.7"/>
+    <rect x="104" y="160" width="10" height="30" rx="2" opacity="0.5"/>
+  </g>
+
+  <!-- station list rows -->
+  <g fill="#17263a">
+    <rect x="40" y="205" width="150" height="8" rx="4"/>
+    <rect x="40" y="221" width="110" height="8" rx="4"/>
+  </g>
+</svg>

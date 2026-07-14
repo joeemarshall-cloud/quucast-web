@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Quu Podcast Editor preview">
+  <defs>
+    <linearGradient id="editorBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241130"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <radialGradient id="editorGlow" cx="75%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#editorBg)"/>
+  <rect width="400" height="250" fill="url(#editorGlow)"/>
+
+  <!-- window chrome -->
+  <rect x="0" y="0" width="400" height="28" fill="#190f22"/>
+  <circle cx="18" cy="14" r="4" fill="#f0785a"/>
+  <circle cx="32" cy="14" r="4" fill="#f0c352"/>
+  <circle cx="46" cy="14" r="4" fill="#5ec98a"/>
+  <rect x="70" y="9" width="180" height="10" rx="5" fill="#241a30"/>
+
+  <!-- waveform -->
+  <g fill="url(#waveGrad)">
+    <rect x="34" y="120" width="8" height="24" rx="3"/>
+    <rect x="46" y="100" width="8" height="64" rx="3"/>
+    <rect x="58" y="70" width="8" height="124" rx="3"/>
+    <rect x="70" y="110" width="8" height="44" rx="3"/>
+    <rect x="82" y="90" width="8" height="84" rx="3"/>
+    <rect x="94" y="60" width="8" height="144" rx="3"/>
+    <rect x="106" y="95" width="8" height="74" rx="3"/>
+    <rect x="118" y="115" width="8" height="34" rx="3"/>
+    <rect x="130" y="80" width="8" height="104" rx="3"/>
+    <rect x="142" y="105" width="8" height="54" rx="3"/>
+    <rect x="154" y="65" width="8" height="134" rx="3"/>
+    <rect x="166" y="100" width="8" height="64" rx="3"/>
+    <rect x="178" y="120" width="8" height="24" rx="3"/>
+    <rect x="190" y="85" width="8" height="94" rx="3"/>
+    <rect x="202" y="105" width="8" height="54" rx="3"/>
+    <rect x="214" y="70" width="8" height="124" rx="3"/>
+    <rect x="226" y="115" width="8" height="34" rx="3"/>
+    <rect x="238" y="95" width="8" height="74" rx="3"/>
+    <rect x="250" y="60" width="8" height="144" rx="3"/>
+    <rect x="262" y="110" width="8" height="44" rx="3"/>
+    <rect x="274" y="90" width="8" height="84" rx="3"/>
+    <rect x="286" y="120" width="8" height="24" rx="3" opacity="0.5"/>
+    <rect x="298" y="105" width="8" height="54" rx="3" opacity="0.4"/>
+    <rect x="310" y="125" width="8" height="14" rx="3" opacity="0.3"/>
+  </g>
+
+  <!-- playhead -->
+  <line x1="150" y1="46" x2="150" y2="200" stroke="#f5f3ff" stroke-width="2" opacity="0.85"/>
+  <polygon points="144,46 156,46 150,56" fill="#f5f3ff" opacity="0.85"/>
+
+  <!-- timeline -->
+  <rect x="34" y="212" width="284" height="8" rx="4" fill="#2a1c38"/>
+  <rect x="34" y="212" width="120" height="8" rx="4" fill="#c084fc"/>
+</svg>

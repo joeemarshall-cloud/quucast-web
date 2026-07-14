@@ -112,15 +112,13 @@ body {
 .app-tile {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  min-height: 190px;
-  padding: 26px;
+  overflow: hidden;
   border-radius: var(--radius);
   background: var(--surface);
   border: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
 
 .app-tile:hover,
@@ -128,27 +126,32 @@ body {
   transform: translateY(-3px);
   border-color: var(--accent);
   background: var(--surface-alt);
+  box-shadow: 0 12px 28px -16px var(--accent-glow);
 }
 
-.tile-icon {
-  width: 40px;
-  height: 40px;
+.tile-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.tile-image-placeholder {
+  background: linear-gradient(135deg, var(--accent-glow), var(--surface-alt));
+}
+
+.tile-body {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: var(--accent-glow);
-  color: var(--accent);
-}
-
-.tile-icon svg {
-  width: 22px;
-  height: 22px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 24px 24px;
 }
 
 .app-tile h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -160,7 +163,7 @@ body {
 }
 
 .tile-label {
-  margin-top: auto;
+  margin-top: 4px;
   display: inline-flex;
   align-items: center;
   gap: 6px;

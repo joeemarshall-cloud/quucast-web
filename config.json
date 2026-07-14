@@ -4,13 +4,19 @@
       "name": "Quu HD Radio Network",
       "url": "https://hdradionetwork.quucast.com",
       "description": "Live tuner dashboard, signal and RDS data, and remote tuning.",
-      "icon": "radio"
+      "image": "assets/tile-radio.svg"
     },
     {
       "name": "Quu Station Status",
       "url": "https://status.quucast.com",
       "description": "Station health, stream status, and system uptime across the network.",
-      "icon": "status"
+      "image": "assets/tile-status.svg"
+    },
+    {
+      "name": "Quu Podcast Editor",
+      "url": "https://podedit.quucast.com",
+      "description": "Record, edit, and publish podcast episodes for the QuuCast network.",
+      "image": "assets/tile-podcast-editor.svg"
     }
   ]
 }
