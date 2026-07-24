@@ -10,6 +10,17 @@ A static launch page for Quu-branded apps, themed to match the Quu HD Radio Netw
 - `script.js` — loads tiles from `config.json`
 - `assets/quu-logo-light.svg` / `assets/quu-logo-dark.svg` — Quu logo, pulled from the Station Status app
 - `favicon.ico` — Quu favicon, pulled from the Station Status app
+- `worker.js` — gates the whole site behind HTTP Basic Auth (see below)
+- `wrangler.jsonc` — Cloudflare Workers config; deploys via the GitHub integration on every push to `main`
+
+## Login (Basic Auth)
+
+The site is gated behind a single shared username/password, checked by `worker.js` on every request (including static assets) before anything is served.
+
+- Credentials are stored as Worker secrets (`BASIC_AUTH_USER` / `BASIC_AUTH_PASS`) in the Cloudflare dashboard under the `quucast-web` project → **Settings → Variables and Secrets** — not committed to this repo.
+- `wrangler.jsonc`'s `assets.run_worker_first: true` is required — without it, requests matching a static file skip the Worker entirely and the auth check never runs.
+- To change the shared password, update the `BASIC_AUTH_PASS` secret in the dashboard; no redeploy needed.
+- This replaced an earlier Cloudflare Access (Zero Trust) setup, which only supports per-person identity-based login (email OTP, SSO), not a plain shareable user/pass.
 
 ## Current apps
 
