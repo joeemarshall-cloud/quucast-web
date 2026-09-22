@@ -30,9 +30,9 @@ The site is gated behind a single shared username/password, checked by `worker.j
 | Quu Station Status | `http://192.168.1.37:4173` | `https://status.quucast.com` |
 | Quu Podcast Metadata Editor | `http://192.168.1.37:4000` | `https://podedit.quucast.com` |
 | Quu Tuner Demo | `http://192.168.1.37:8080` | `https://tunerdemo.quucast.com` |
-| iQuu Sports Monitor | `http://192.168.1.37:3003` | `https://sportsmonitor.quucast.com` |
+| iQuu Sports Monitor | `http://192.168.1.37:3003` | `https://sports.quucast.com` |
 
-`config.json` already points at the public `quucast.com` addresses. A tile's public address won't resolve until its app is actually running on the dedicated PC AND a matching Public Hostname exists in the `quucast-apps` Cloudflare Tunnel (see "Adding more apps later" below) - as of this edit, `iQuu Sports Monitor`'s tunnel hostname has not been added yet, so its tile will 404 until that manual step is done.
+`config.json` already points at the public `quucast.com` addresses. A tile's public address won't resolve until its app is actually running on the dedicated PC AND a matching Public Hostname exists in the `quucast-apps` Cloudflare Tunnel (see "Adding more apps later" below) - as of this edit, the `sports` tunnel hostname is live but returns 502 until the iQuu Sports Monitor app is actually deployed and running on the dedicated PC.
 
 The Quu HD Radio Tuner (`192.168.1.37:8080`) wasn't added as a tile — say the word if you want a third tile for it later.
 

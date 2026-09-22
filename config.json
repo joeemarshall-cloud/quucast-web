@@ -26,7 +26,7 @@
     },
     {
       "name": "iQuu Sports Monitor",
-      "url": "https://sportsmonitor.quucast.com",
+      "url": "https://sports.quucast.com",
       "description": "Watches Quu stations' on-air output during iQuu sports billboard windows and alerts on drift from the agent's expected schedule.",
       "image": "assets/tile-sportsmonitor.svg"
     }
