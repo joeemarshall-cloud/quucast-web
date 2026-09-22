@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="iQuu Sports Monitor preview">
+  <defs>
+    <linearGradient id="sportsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a140f"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <radialGradient id="sportsGlow" cx="78%" cy="22%" r="60%">
+      <stop offset="0%" stop-color="#fb7a3c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fb7a3c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#sportsBg)"/>
+  <rect width="400" height="250" fill="url(#sportsGlow)"/>
+
+  <!-- window chrome -->
+  <rect x="0" y="0" width="400" height="28" fill="#241209"/>
+  <circle cx="18" cy="14" r="4" fill="#f0785a"/>
+  <circle cx="32" cy="14" r="4" fill="#f0c352"/>
+  <circle cx="46" cy="14" r="4" fill="#5ec98a"/>
+  <rect x="70" y="9" width="180" height="10" rx="5" fill="#3a2013"/>
+
+  <!-- billboard panel: two lines of scoreboard text, like the real
+       on-air billboards this app watches -->
+  <rect x="40" y="54" width="320" height="72" rx="10" fill="#1c0f08" stroke="#4a2a17" stroke-width="1.5"/>
+  <rect x="58" y="72" width="150" height="14" rx="4" fill="#fb7a3c"/>
+  <rect x="58" y="96" width="110" height="10" rx="4" fill="#7a4426"/>
+  <!-- live/on-air dot -->
+  <circle cx="332" cy="79" r="7" fill="#fb7a3c"/>
+  <circle cx="332" cy="79" r="13" fill="none" stroke="#fb7a3c" stroke-width="2" opacity="0.5"/>
+
+  <!-- monitoring pulse line, representing the live poll/alert-watch loop -->
+  <polyline points="40,178 90,178 108,150 126,205 144,178 200,178 218,160 236,196 254,178 360,178"
+    fill="none" stroke="#fb7a3c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+
+  <!-- station rows -->
+  <g fill="#3a2013">
+    <rect x="40" y="205" width="150" height="8" rx="4"/>
+    <rect x="40" y="221" width="110" height="8" rx="4"/>
+  </g>
+</svg>
