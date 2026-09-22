@@ -23,6 +23,11 @@
       "url": "https://tunerdemo.quucast.com",
       "description": "Single tuner instance (Windows or Linux/Pi). This tuner is set to network mode and shared with the Quu HD Radio Network.",
       "image": "assets/tile-tuner-demo.svg"
+    },
+    {
+      "name": "iQuu Sports Monitor",
+      "url": "https://sportsmonitor.quucast.com",
+      "description": "Watches Quu stations' on-air output during iQuu sports billboard windows and alerts on drift from the agent's expected schedule."
     }
   ]
 }
